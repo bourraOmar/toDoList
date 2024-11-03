@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>To Do List</title>
+</head>
+
+<body class="bg-blue-500">
+
+
+  <div class="White p-5 text-white text-base flex justify-around bg-white">
+    <h1 class="text-2xl font-bold text-blue-500">Tasks.</h1>
+    <button id="openPopup" type="submit" value="Add" class="bg-blue-500 h-10 w-32 rounded-full hover:bg-blue-700">Add
+      task</button>
+  </div>
+
+<!-- pop up form  -->
+<div id="popupForm" class="fixed shadow z-10 inset-0 bg-blue-200 bg-opacity-50 backdrop-blur-sm flex items-center justify-center hidden transition-opacity duration-500 ease-out opacity-0">
+  <div class="bg-white max-w-md w-full p-6 rounded-lg relative transform transition-transform scale-95">
+    <form id="myForm" class="space-y-4">
+      <h2 class="text-xl font-bold text-gray-800">Add Your Task</h2>
+      <input class="w-full p-2 rounded" id="title" type="text" placeholder="title">
+      <input class="w-full p-2 rounded" id="date" type="date">
+      <select id="priority" class="w-full p-2 rounded">
+        <option value="">Priority</option>
+        <option value="op1">op1</option>
+        <option value="op2">op2</option>
+        <option value="op3">op3</option>
+      </select>
+      <select id="status" class="w-full p-2 rounded">
+        <option value="">Status</option>
+        <option value="toDo">To Do</option>
+        <option value="Doing">Doing</option>
+        <option value="Done">Done</option>
+      </select>
+      <textarea class="w-full p-2 rounded resize-none" id="description" placeholder="description"></textarea>
+      <input type="submit" id="submit" value="Add New Task" class="w-full p-2 bg-blue-500 text-white rounded cursor-pointer hover:bg-blue-600">
+    </form>
+    <button id="closePopup" class="w-full mt-2 p-2 bg-red-500 text-white rounded cursor-pointer hover:bg-red-600">Cancel</button>
+  </div>
+</div>
+
+
+  <!-- Body -->
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 m-6  ">
+    <div class=" bg-white rounded-lg p-4">
+      <h2 class="p-2 text-lg font-bold text-black mb-4">To Do</h2>
+      <div class="toDo"></div>
+    </div>
+    <div class=" bg-white rounded-lg p-4">
+      <h2 class="p-2 text-lg font-bold text-black mb-4">Doing</h2>
+      <div class="doing"></div>
+    </div>
+    <div class=" bg-white rounded-lg p-4">
+      <h2 class="p-2 text-lg font-bold text-black mb-4">Done</h2>
+      <div class="done"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
